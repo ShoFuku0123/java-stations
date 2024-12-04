@@ -4,11 +4,11 @@ public class Main {
     public static void main(String[] args) {
         // ここから
         boolean a = false;
-        System.out.print(a);
+        System.out.println(a);
         int i = 42;
-        System.out.print(i);
+        System.out.println(i);
         double d = 3.141592;
-        System.out.print(d);
+        System.out.println(d);
         // ここまで
     }
 }
