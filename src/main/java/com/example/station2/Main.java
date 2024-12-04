@@ -6,7 +6,7 @@ public class Main {
         boolean a = false;
         System.out.println(a);
         
-        Integer i = 42;
+        int i = 42;
         System.out.println(i);
 
         double d = 3.141592;
