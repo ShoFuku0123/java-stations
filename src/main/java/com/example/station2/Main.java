@@ -5,10 +5,8 @@ public class Main {
         // ここから
         boolean a = false;
         System.out.print(a);
-        
         int i = 42;
         System.out.print(i);
-
         double d = 3.141592;
         System.out.print(d);
         // ここまで
