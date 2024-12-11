@@ -15,6 +15,61 @@ public class Main {
 
     public static void test(int[] itemPrices) {
         // ここから
+        // クーポンAパターン
+        int a_sum = 0;
+        int a_all = 0;
+        for (int value : itemPrices) {
+            a_sum += value;
+        }
+        a_all = a_sum;
+
+        // クーポンBパターン
+        int b_sum = 0;
+        int b_all = 0;
+        for (int value : itemPrices) {
+            value = value - (value / 10);
+            b_sum += value;
+        }
+        if (b_sum < 5000) {
+            b_all = b_sum + 800;
+        }
+        else {
+            b_all = b_sum;
+        }
+
+        // クーポンCパターン
+        int c_sum = 0;
+        int c_all = 0;
+        for (int value : itemPrices) {
+            if (value >= 2000) {
+                value = value - (value / 20);
+            }
+            c_sum += value;
+        }
+        if (c_sum < 5000) {
+            c_all = c_sum + 800;
+        }
+        else {
+            c_all = c_sum;
+        }
+
+        // どのクーポンがいいか
+        int[] coupon = {a_all,b_all,c_all};
+        int max = coupon[0];
+        for (int i = 1; i < coupon.length; i++) {
+            if (max < coupon[i]) {
+                max = coupon[i];
+            }
+        }
+        if (max == a_all) {
+            System.out.println("A");
+        }
+        else if (max == b_all) {
+            System.out.println("B");
+        }
+        else if (max == c_all) {
+            System.out.println("C");
+        }
         // ここまで
     }
 }
