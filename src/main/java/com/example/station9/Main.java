@@ -26,9 +26,9 @@ public class Main {
         // クーポンBパターン
         int b_sum = 0;
         int b_all;
-        for (double value : itemPrices) {
-            value = value * 0.9;
-            b_sum += value;
+        for (int value : itemPrices) {
+            double values = value * 0.9;
+            b_sum += values;
         }
         if (b_sum < 5000) {
             b_all = b_sum + 800;
@@ -40,11 +40,14 @@ public class Main {
         // クーポンCパターン
         int c_sum = 0;
         int c_all;
-        for (double value : itemPrices) {
+        for (int value : itemPrices) {
             if (value >= 2000) {
-                value = value * 0.8;
+                double values = value * 0.8;
+                c_sum += values;
             }
-            c_sum += value;
+            else {
+                c_sum += value;
+            }
         }
         if (c_sum < 5000) {
             c_all = c_sum + 800;
