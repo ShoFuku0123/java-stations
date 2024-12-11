@@ -17,7 +17,7 @@ public class Main {
         // ここから
         // クーポンAパターン
         int a_sum = 0;
-        int a_all = 0;
+        int a_all;
         for (int value : itemPrices) {
             a_sum += value;
         }
@@ -25,7 +25,7 @@ public class Main {
 
         // クーポンBパターン
         int b_sum = 0;
-        int b_all = 0;
+        int b_all;
         for (int value : itemPrices) {
             value = value - (value / 10);
             b_sum += value;
@@ -39,7 +39,7 @@ public class Main {
 
         // クーポンCパターン
         int c_sum = 0;
-        int c_all = 0;
+        int c_all;
         for (int value : itemPrices) {
             if (value >= 2000) {
                 value = value - (value / 20);
@@ -55,19 +55,19 @@ public class Main {
 
         // どのクーポンがいいか
         int[] coupon = {a_all,b_all,c_all};
-        int max = coupon[0];
+        int min = coupon[0];
         for (int i = 1; i < coupon.length; i++) {
-            if (max < coupon[i]) {
-                max = coupon[i];
+            if (min > coupon[i]) {
+                min = coupon[i];
             }
         }
-        if (max == a_all) {
+        if (min == a_all) {
             System.out.println("A");
         }
-        else if (max == b_all) {
+        else if (min == b_all) {
             System.out.println("B");
         }
-        else if (max == c_all) {
+        else if (min == c_all) {
             System.out.println("C");
         }
         // ここまで
